@@ -5,10 +5,7 @@
  */
 ?>
 <!DOCTYPE html>
-<!--[if IE 7 ]><html <?php language_attributes(); ?> class="ie7"><![endif]-->
-<!--[if IE 8 ]><html <?php language_attributes(); ?> class="ie8"><![endif]-->
-<!--[if IE 9 ]><html <?php language_attributes(); ?> class="ie9"><![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--><html <?php language_attributes(); ?> class="no-js"><!--<![endif]-->
+<html <?php language_attributes(); ?> class="no-js">
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 
@@ -26,10 +23,6 @@
 <link rel="stylesheet" type="text/css" media="all" href="<?php echo get_template_directory_uri(); ?>/960.css" />
 
 <link href="http://fonts.googleapis.com/css?family=Didact+Gothic" rel="stylesheet" type="text/css"/>
-
-<!--[if (gte IE 7)&(lte IE 8)]>
-<script src="<?php echo get_template_directory_uri(); ?>/js/selectivizr.js" type="text/javascript"></script>
-<![endif]-->
 
 <!-- Grab Google CDN's jQuery; if that fails, fall back to WP local copy -->
 <?php wp_enqueue_script( 'jquery' ); ?>

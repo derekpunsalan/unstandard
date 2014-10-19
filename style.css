@@ -155,16 +155,6 @@ textarea {
 	     -o-box-shadow: 0 2px 3px rgba(0,0,0,0.1) inset;
 	        box-shadow: 0 2px 3px rgba(0,0,0,0.1) inset;
 }
-.ie7 input[type=text],
-.ie7 textarea {
-	padding-left: 5px;
-	width: 97.7%;
-}
-.ie8 input[type=text],
-.ie8 textarea {
-	padding-left: 5px;
-	width: 97.4%;
-}
 
 /*	-----------------------------------------------------------------------------
 	[02] CORE - Look inside 960.css for the 960.gs grid used for layout
@@ -723,9 +713,6 @@ ul.children .comment-author .avatar {
 	color: #aaa;
 	font-weight: 400;
 	text-decoration: none;
-}
-.ie7 .form-submit input[type=submit] {
-	height: 40px;
 }
 .form-submit input[type=submit]:hover {
 	color: #fff;
