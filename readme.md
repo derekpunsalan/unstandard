@@ -14,7 +14,7 @@ Please do!
 
 ## Support
 
-Submit a ticket through the Issue tracker.
+Submit a ticket through the [Issues](https://github.com/derekpunsalan/unstandard/issues) tracker.
 
 ## Issues / Bugs
 
