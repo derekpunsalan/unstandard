@@ -1,9 +1,3 @@
-<?php
-/**
- * @package Unstandard
- * @since Unstandard 3.0
- */
-?>
 <div class="sidebar-column grid-4">
 
 	<?php if ( is_single() ) { ?>

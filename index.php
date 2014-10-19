@@ -1,9 +1,4 @@
-<?php
-/**
- * @package Unstandard
- * @since Unstandard 3.0
- */
-get_header(); ?>
+<?php get_header(); ?>
 
 <div class="north">
 

@@ -1,9 +1,4 @@
-<?php
-/**
- * @package Unstandard
- * @since Unstandard 3.0
- */
-?>
+
 		<div id="middle">
 
 			<div class="grid-12">
