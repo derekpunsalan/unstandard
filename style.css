@@ -36,7 +36,7 @@ html {
 	height: 100%;
 }
 body {
-	background: #eee url("images/bg.png") repeat 0 0;
+	background: #efefef;
 	font-family: Helvetica, Arial, sans-serif;
 	font-size: 13px;
 	line-height: 1.6em;
@@ -164,19 +164,6 @@ textarea {
 .ie8 textarea {
 	padding-left: 5px;
 	width: 97.4%;
-}
-/* Non body images */
-.single-entry .post li,
-.widget ul.blogroll li,
-.widget_pages li a,
-.widget_meta li a,
-.widget_recent_entries li a,
-.widget #recentcomments li,
-#bottom .widget_categories li,
-.widget_archive li,
-.widget_rss li {
-	background-image: url("images/icn-bullet.png");
-	background-repeat: no-repeat;
 }
 
 /*	-----------------------------------------------------------------------------
@@ -528,12 +515,15 @@ a:hover .thumbnail-title {
 	padding-left: 10px;
 	color: #6c6c6c;
 }
-.single-entry .post ul {
-	margin-left: 20px;
+.single-entry .post ul,
+.single-entry .post ol {
+	margin-left: 25px;
 }
-.single-entry .post li {
-	background-position: 7px 5px;
-	padding-left: 24px;
+.single-entry .post ul {
+	list-style: disc;
+}
+.single-entry .post ol {
+	list-style: decimal;
 }
 .paginate-posts {
 	margin-bottom: 20px;
@@ -837,35 +827,6 @@ ul.children .comment-author .avatar {
 }
 .widget li {
 	color: #6c6c6c;
-}
-.widget ul.blogroll li,
-.widget_pages li a,
-.widget_meta li a,
-.widget_recent_entries li a,
-.widget #recentcomments li,
-#bottom .widget_categories li,
-.widget_archive li,
-.widget_rss li {
-	background-position: 7px 5px;
-	padding-left: 24px;
-}
-.ie7 .widget ul.blogroll li,
-.ie8 .widget ul.blogroll li,
-.ie7 .widget_pages li a,
-.ie8 .widget_pages li a,
-.ie7 .widget_meta li a,
-.ie8 .widget_meta li a,
-.ie7 .widget_recent_entries li a,
-.ie8 .widget_recent_entries li a,
-.ie7 .widget #recentcomments li,
-.ie8 .widget #recentcomments li,
-.ie7 #bottom .widget_categories li,
-.ie8 #bottom .widget_categories li,
-.ie7 .widget_archive li,
-.ie8 .widget_archive li,
-.ie7 .widget_rss li,
-.ie8 .widget_rss li {
-	background-position: 7px 7px;
 }
 .widget_recent_entries li a,
 .widget_pages li a,
