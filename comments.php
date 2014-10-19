@@ -1,9 +1,3 @@
-<?php
-/**
- * @package Unstandard
- * @since Unstandard 3.0
- */
-?>
 <div id="comments">
 <?php
 // Do not delete these lines

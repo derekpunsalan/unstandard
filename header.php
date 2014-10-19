@@ -1,9 +1,3 @@
-<?php
-/**
- * @package Unstandard
- * @since Unstandard 3.0
- */
-?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
 <head>
