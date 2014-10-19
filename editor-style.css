@@ -1,0 +1,19 @@
+/* match rich text editor with final output */
+html .mceContentBody {
+	max-width: 620px;
+	color: #333;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 13px;
+	line-height: 1.6em;
+}
+html .mceContentBody img {
+	max-width: 100%;
+	height: 100%;
+	height: auto;
+}
+html .mceContentBody .alignleft {
+	margin: 6px 10px 4px 0;
+}
+html .mceContentBody .alignright {
+	margin: 6px 0 4px 10px;
+}
