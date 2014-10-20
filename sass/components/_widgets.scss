@@ -1,0 +1,137 @@
+.sidebar-column,
+#middle,
+#bottom {
+  .widget {
+    margin-bottom: 20px;
+
+    // Define widget title separators
+    .widgettitle {
+      border-bottom: 1px solid $border-color;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+
+    // Present unordered lists as plain lists
+    ul {
+      list-style: none;
+    }
+
+    // Search widget
+    &_search {
+
+    }
+  }
+}
+
+
+// .widget .widgettitle {
+//   border-bottom: 1px solid #ccc;
+//   padding-bottom: 10px;
+//   margin-bottom: 10px;
+//   text-transform: uppercase;
+//   overflow: hidden;
+// }
+// #middle .widget_categories {
+//   overflow: hidden;
+// }
+// #middle .widget_categories > ul {
+//   margin-left: -20px;
+//   overflow: hidden;
+// }
+// #middle .widget_categories li {
+//   float: left;
+//   width: 140px;
+//   margin-left: 20px;
+// }
+// #middle .widget_categories ul ul,
+// #middle .widget_categories ul ul ul,
+// #middle .widget_categories ul ul ul ul,
+// #middle .widget_categories ul ul ul ul ul {
+//   padding-top: 3px;
+//   margin-bottom: -3px;
+// }
+// #middle .widget_categories ul ul li {
+//   margin-left: 0;
+// }
+// #middle .widget_categories li {
+//   color: #aaa;
+//   text-align: right;
+//   padding: 3px 0;
+// }
+// #middle .widget_categories li a {
+//   float: left;
+// }
+// #bottom  .grid-12 {
+//   width: 960px;
+//   padding-bottom: 20px;
+// }
+// #bottom .widget {
+//   padding-top: 20px;
+//   float: left;
+//   width: 300px;
+//   margin-right: 20px;
+// }
+// .widget_calendar table {
+//   border-collapse: collapse;
+//   width: 100%;
+//   max-width: 300px;
+//   text-align: center;
+// }
+// .widget_calendar caption {
+//   padding-bottom: 8px;
+// }
+// .widget_calendar td {
+//   padding: 3px 0;
+//   border: 2px solid transparent;
+// }
+// .widget_calendar td a {
+//   display: block;
+//   background: #eee;
+// }
+
+// .widget_rss a.rsswidget {
+//   float: left;
+//   margin-right: 5px;
+// }
+// .widget_rss a.rsswidget img {
+//   position: relative;
+//   top: -3px;
+// }
+// .widget li {
+//   color: #6c6c6c;
+// }
+// .widget_recent_entries li a,
+// .widget_pages li a,
+// .widget_meta li a,
+// .widget ul.blogroll li,
+// .widget_archive li,
+// .widget_rss li {
+//   display: block;
+// }
+// .widget_rss li {
+//   overflow: hidden;
+// }
+
+// // Custom menu as plain list widget
+// .widget_nav_menu {
+//   a {
+//     padding-left: 6px;
+//     padding-right: 6px;
+//   }
+
+//   .menu {
+//     float: none;
+//     border: none;
+//     border-bottom: 1px solid $border-color;
+
+//     li {
+//       border: 1px solid #ccc;
+//       border-width: 1px 0 0;
+//       float: none;
+
+//       li {
+//         border-top: 0;
+//       }
+//     }
+//   }
+// }

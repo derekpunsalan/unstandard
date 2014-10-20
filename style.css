@@ -1,869 +1,1628 @@
+@charset "UTF-8";
 /*
 Theme Name: Unstandard
-Theme URI: http://5thirtyone.com/unstandard-wordpress-theme/
-Description: The Unstandard is a lightweight theme which uses post thumbnails to highlight your content before presenting full text. Customize the themes three widget ready zones, add a custom background or create a custom nested menu. The two column theme includes a full width page for larger photos and a basic archives page to get you started.
-Version: 3.0.0
+Theme URI: https://github.com/derekpunsalan/unstandard
 Author: Derek Punsalan
-Author URI: http://5thirtyone.com/
-Tags: fixed-width, threaded-comments, custom-background
+Author URI: http://punsalan.me
+Description: Unstandard is a simple theme which calls attention to posts using a single featured image. The theme supports three customizable widget regions, custom backgrounds, and nested menus. Included with the theme is a full-width page template + basic archive.
+Version: 3.0.1
 
-License:
-License URI:
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
+Tags: two-columns, right-sidebar, custom-header, custom-menu, full-width-template, threaded-comments, custom-background
 */
+/* Neat 1.7.0
+ * http://neat.bourbon.io
+ * Copyright 2012-2014 thoughtbot, inc.
+ * MIT License */
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
 
-/*	-----------------------------------------------------------------------------
-	[01] RESET
-	----------------------------------------------------------------------------- */
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+/* normalize-scss 3.0.1+normalize.3.0.1 | MIT/GPLv2 License | bit.ly/normalize-scss */
+/* Base
+   ========================================================================== */
+/**
+ * Establish a vertical rhythm unit using $base-font-size, $base-line-height,
+ * and $rhythm-unit variables. Also, correct text resizing oddly in IE 6/7 when
+ * body `font-size` is set using `em` units.
+ */
+html {
+  font-size: 100%;
+  line-height: 1.5em;
+}
+
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+html {
+  font-family: "Didact Gothic", Helvetica, Arial, sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+}
+
+/**
+ * Remove default margin.
+ */
+body {
+  margin: 0;
+}
+
+/* HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined for any HTML5 element in IE 8/9.
+ * Correct `block` display not defined for `details` or `summary` in IE 10/11 and Firefox.
+ * Correct `block` display not defined for `main` in IE 11.
+ */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/**
+ * 1. Correct `inline-block` display not defined in IE 8/9.
+ * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+ */
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  /* 1 */
+  *display: inline;
+  *zoom: 1;
+  vertical-align: baseline;
+  /* 2 */
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9/10.
+ */
+[hidden] {
+  display: none;
+}
+
+/**
+ * Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22.
+ */
+template {
+  display: none;
+}
+
+/* Links
+   ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+a {
+  background: transparent;
+}
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
+ */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
+ */
+b,
+strong {
+  font-weight: bold;
+}
+
+/**
+ * Set 1 unit of vertical rhythm on the top and bottom margin.
+ */
+blockquote {
+  margin: 1.5em 40px;
+}
+
+/**
+ * Address styling not present in Safari and Chrome.
+ */
+dfn {
+  font-style: italic;
+}
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari, and Chrome.
+ */
+h1 {
+  /* Set the font-size and line-height while keeping a proper vertical rhythm. */
+  font-size: 2em;
+  line-height: 1.5em;
+  /* Set 1 unit of vertical rhythm on the top and bottom margins. */
+  margin-top: 0.75em;
+  margin-bottom: 0.75em;
+}
+
+h2 {
+  font-size: 1.5em;
+  line-height: 2em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+h3 {
+  font-size: 1.17em;
+  line-height: 1.28205em;
+  margin-top: 1.28205em;
+  margin-bottom: 1.28205em;
+}
+
+h4 {
+  font-size: 1em;
+  line-height: 1.5em;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+h5 {
+  font-size: 0.83em;
+  line-height: 1.80723em;
+  margin-top: 1.80723em;
+  margin-bottom: 1.80723em;
+}
+
+h6 {
+  font-size: 0.67em;
+  line-height: 2.23881em;
+  margin-top: 2.23881em;
+  margin-bottom: 2.23881em;
+}
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+/**
+ * Set 1 unit of vertical rhythm on the top and bottom margin.
+ */
+p,
+pre {
+  margin: 1.5em 0;
+}
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+/* Lists
+   ========================================================================== */
+/**
+ * Address margins set differently in IE 6/7.
+ */
+dl,
+menu,
+ol,
+ul {
+  margin: 1.5em 0;
+}
+
+dd {
+  margin: 0 0 0 40px;
+}
+
+/**
+ * Address paddings set differently in IE 6/7.
+ */
+menu,
+ol,
+ul {
+  padding: 0 0 0 40px;
+}
+
+/**
+ * Correct list images handled incorrectly in IE 7.
+ */
+nav ul,
+nav ol {
+  list-style: none;
+  list-style-image: none;
+}
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9/10.
+ */
+img {
+  border: 0;
+  /* Improve image quality when scaled in IE 7. */
+  -ms-interpolation-mode: bicubic;
+}
+
+/**
+ * Correct overflow not hidden in IE 9/10/11.
+ */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari.
+ */
+figure {
+  margin: 1.5em 40px;
+}
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+hr {
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+/**
+ * Contain overflow in all browsers.
+ */
+pre {
+  overflow: auto;
+}
+
+/**
+ * Address odd `em`-unit font size rendering in all browsers.
+ */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+/* Forms
+   ========================================================================== */
+/**
+ * Known limitation: by default, Chrome and Safari on OS X allow very limited
+ * styling of `select`, unless a `border` property is set.
+ */
+/**
+ * Correct margin displayed oddly in IE 6/7.
+ */
+form {
+  margin: 0;
+}
+
+/**
+ * 1. Correct color not being inherited.
+ *    Known issue: affects color of disabled elements.
+ * 2. Correct font properties not being inherited.
+ * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
+ * 4. Address `font-family` inconsistency between `textarea` and other form in IE 7
+ * 5. Improve appearance and consistency with IE 6/7.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+  margin: 0;
+  /* 3 */
+  *font-family: "Didact Gothic", Helvetica, Arial, sans-serif;
+  /* 4 */
+  *vertical-align: middle;
+  /* 5 */
+}
+
+/**
+ * Address `overflow` set to `hidden` in IE 8/9/10/11.
+ */
+button {
+  overflow: visible;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
+ * Correct `select` style inheritance in Firefox.
+ */
+button,
+select {
+  text-transform: none;
+}
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ * 4. Remove inner spacing in IE 7 without affecting normal text inputs.
+ *    Known issue: inner spacing remains in IE 6.
+ */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */
+  *overflow: visible;
+  /* 4 */
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+input {
+  line-height: normal;
+}
+
+/**
+ * It's recommended that you don't attempt to style these elements.
+ * Firefox's implementation doesn't respect box-sizing, padding, or width.
+ *
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ * 3. Remove excess padding in IE 7.
+ *    Known issue: excess padding remains in IE 6.
+ */
+input[type="checkbox"],
+input[type="radio"] {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+  *height: 13px;
+  /* 3 */
+  *width: 13px;
+  /* 3 */
+}
+
+/**
+ * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+ * `font-size` values of the `input`, it causes the cursor style of the
+ * decrement button to change from `default` to `text`.
+ */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari and Chrome
+ *    (include `-moz` to future-proof).
+ */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  /* 2 */
+  /**
+   * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+   * Safari (but not Chrome) clips the cancel button when the search input has
+   * padding (and `textfield` appearance).
+   */
+}
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+fieldset {
+  margin: 0 2px;
+  /* Apply borders and padding that keep the vertical rhythm. */
+  border-color: #c0c0c0;
+  border-top-width: 0.0625em;
+  border-top-style: solid;
+  padding-top: 0.4625em;
+  border-bottom-width: 0.0625em;
+  border-bottom-style: solid;
+  padding-bottom: 0.9125em;
+  border-left-width: 0.0625em;
+  border-left-style: solid;
+  padding-left: 0.875em;
+  border-right-width: 0.0625em;
+  border-right-style: solid;
+  padding-right: 0.875em;
+}
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9/10/11.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ * 3. Correct alignment displayed oddly in IE 6/7.
+ */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+  *margin-left: -7px;
+  /* 3 */
+}
+
+/**
+ * Remove default vertical scrollbar in IE 8/9/10/11.
+ */
+textarea {
+  overflow: auto;
+}
+
+/**
+ * Don't inherit the `font-weight` (applied by a rule above).
+ * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+ */
+optgroup {
+  font-weight: bold;
+}
+
+/* Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: #efefef;
+  color: #555;
+  font-family: "Didact Gothic", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 26px;
+}
+
+h2 {
+  font-size: 22px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+h4 {
+  font-size: 18px;
+}
+
+h5,
+h6 {
+  font-size: 16px;
+}
+
+h6 {
+  text-transform: uppercase;
+  font-style: italic;
+}
+
+a {
+  color: #777;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+  color: #5e5e5e;
+}
+
+.content-box {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto;
+  background: white;
+}
+.content-box:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.content-box .main-column {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 65.88078%;
+  padding: 20px 0 5px 20px;
+}
+.content-box .main-column:last-child {
+  margin-right: 0;
+}
+.content-box .sidebar-column {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 31.76157%;
+  padding: 20px 20px 20px 0;
+}
+.content-box .sidebar-column:last-child {
+  margin-right: 0;
+}
+
+.masthead-inner {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto;
+}
+.masthead-inner:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.masthead-inner .main-logo {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 91.4702%;
+}
+.masthead-inner .main-logo:last-child {
+  margin-right: 0;
+}
+.masthead-inner .nav-toggle {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 6.17215%;
+}
+.masthead-inner .nav-toggle:last-child {
+  margin-right: 0;
+}
+
+.masthead {
+  background: #fff;
+  padding: 20px;
+  margin: 0 0 30px;
+}
+.masthead .nav-toggle {
+  text-align: right;
+}
+.masthead .nav-toggle a {
+  font-size: 22px;
+  display: inline-block;
+  height: 36px;
+  line-height: 34px;
+  width: 36px;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.cd-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  visibility: hidden;
+  z-index: 900;
+  -webkit-transition: visibility 0s 0.6s;
+  -moz-transition: visibility 0s 0.6s;
+  transition: visibility 0s 0.6s;
+}
+.cd-panel:after {
+  /* overlay layer */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: red;
+  cursor: pointer;
+  -webkit-transition: background 0.3s 0.3s;
+  -moz-transition: background 0.3s 0.3s;
+  transition: background 0.3s 0.3s;
+}
+.cd-panel.is-visible {
+  visibility: visible;
+  -webkit-transition: visibility 0s 0s;
+  -moz-transition: visibility 0s 0s;
+  transition: visibility 0s 0s;
+}
+.cd-panel.is-visible:after {
+  background: rgba(0, 0, 0, 0.6);
+  -webkit-transition: background 0.3s 0s;
+  -moz-transition: background 0.3s 0s;
+  transition: background 0.3s 0s;
+}
+.cd-panel.is-visible .cd-panel-close::before {
+  -webkit-animation: cd-close-1 0.6s 0.3s;
+  -moz-animation: cd-close-1 0.6s 0.3s;
+  animation: cd-close-1 0.6s 0.3s;
+}
+.cd-panel.is-visible .cd-panel-close::after {
+  -webkit-animation: cd-close-2 0.6s 0.3s;
+  -moz-animation: cd-close-2 0.6s 0.3s;
+  animation: cd-close-2 0.6s 0.3s;
+}
+
+@-webkit-keyframes cd-close-1 {
+  0%, 50% {
+    -webkit-transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(45deg);
+  }
+}
+@-moz-keyframes cd-close-1 {
+  0%, 50% {
+    -moz-transform: rotate(0);
+  }
+  100% {
+    -moz-transform: rotate(45deg);
+  }
+}
+@keyframes cd-close-1 {
+  0%, 50% {
+    -webkit-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -ms-transform: rotate(0);
+    -o-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+}
+@-webkit-keyframes cd-close-2 {
+  0%, 50% {
+    -webkit-transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(-45deg);
+  }
+}
+@-moz-keyframes cd-close-2 {
+  0%, 50% {
+    -moz-transform: rotate(0);
+  }
+  100% {
+    -moz-transform: rotate(-45deg);
+  }
+}
+@keyframes cd-close-2 {
+  0%, 50% {
+    -webkit-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -ms-transform: rotate(0);
+    -o-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+}
+.cd-panel-header {
+  position: fixed;
+  width: 90%;
+  height: 50px;
+  line-height: 50px;
+  background: rgba(255, 255, 255, 0.96);
+  z-index: 2;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08);
+  -webkit-transition: top 0.3s 0s;
+  -moz-transition: top 0.3s 0s;
+  transition: top 0.3s 0s;
+}
+.from-right .cd-panel-header, .from-left .cd-panel-header {
+  top: -50px;
+}
+.from-right .cd-panel-header {
+  right: 0;
+}
+.from-left .cd-panel-header {
+  left: 0;
+}
+.is-visible .cd-panel-header {
+  top: 0;
+  -webkit-transition: top 0.3s 0.3s;
+  -moz-transition: top 0.3s 0.3s;
+  transition: top 0.3s 0.3s;
+}
+@media only screen and (min-width: 768px) {
+  .cd-panel-header {
+    width: 70%;
+  }
+}
+@media only screen and (min-width: 1170px) {
+  .cd-panel-header {
+    width: 50%;
+  }
+}
+
+.cd-panel-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 60px;
+  /* image replacement */
+  display: inline-block;
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+}
+.cd-panel-close::before, .cd-panel-close::after {
+  /* close icon created in CSS */
+  position: absolute;
+  top: 22px;
+  left: 20px;
+  height: 3px;
+  width: 20px;
+  background-color: #424f5c;
+  /* this fixes a bug where pseudo elements are slighty off position */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.cd-panel-close::before {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.cd-panel-close::after {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+.no-touch .cd-panel-close:hover {
+  background-color: #424f5c;
+}
+.no-touch .cd-panel-close:hover::before, .no-touch .cd-panel-close:hover::after {
+  background-color: #ffffff;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+.no-touch .cd-panel-close:hover::before {
+  -webkit-transform: rotate(220deg);
+  -moz-transform: rotate(220deg);
+  -ms-transform: rotate(220deg);
+  -o-transform: rotate(220deg);
+  transform: rotate(220deg);
+}
+.no-touch .cd-panel-close:hover::after {
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+
+.cd-panel-container {
+  position: fixed;
+  width: 90%;
+  height: 100%;
+  top: 0;
+  background: #dbe2e9;
+  z-index: 1;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-delay: 0.3s;
+  -moz-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+}
+.from-right .cd-panel-container {
+  right: 0;
+  -webkit-transform: translate3d(100%, 0, 0);
+  -moz-transform: translate3d(100%, 0, 0);
+  -ms-transform: translate3d(100%, 0, 0);
+  -o-transform: translate3d(100%, 0, 0);
+  transform: translate3d(100%, 0, 0);
+}
+.from-left .cd-panel-container {
+  left: 0;
+  -webkit-transform: translate3d(-100%, 0, 0);
+  -moz-transform: translate3d(-100%, 0, 0);
+  -ms-transform: translate3d(-100%, 0, 0);
+  -o-transform: translate3d(-100%, 0, 0);
+  transform: translate3d(-100%, 0, 0);
+}
+.is-visible .cd-panel-container {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transition-delay: 0s;
+  -moz-transition-delay: 0s;
+  transition-delay: 0s;
+}
+@media only screen and (min-width: 768px) {
+  .cd-panel-container {
+    width: 70%;
+  }
+}
+@media only screen and (min-width: 1170px) {
+  .cd-panel-container {
+    width: 50%;
+  }
+}
+
+.cd-panel-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 70px 5%;
+  overflow: auto;
+  /* smooth scrolling on touch devices */
+  -webkit-overflow-scrolling: touch;
+}
+.cd-panel-content p {
+  color: #424f5c;
+  line-height: 1.4;
+  margin: 2em 0;
+}
+.cd-panel-content p:first-of-type {
+  margin-top: 0;
+}
+@media only screen and (min-width: 768px) {
+  .cd-panel-content p {
+    line-height: 1.6;
+  }
+}
+
+.sidebar-column .widget,
+#middle .widget,
+#bottom .widget {
+  margin-bottom: 20px;
+}
+.sidebar-column .widget .widgettitle,
+#middle .widget .widgettitle,
+#bottom .widget .widgettitle {
+  border-bottom: 1px solid #ddd;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+.sidebar-column .widget ul,
+#middle .widget ul,
+#bottom .widget ul {
+  list-style: none;
+}
+
+.primary-post,
+.secondary-post {
+  margin-bottom: 2.36%;
+  background-color: #eee;
+  position: relative;
+}
+.primary-post a,
+.secondary-post a {
+  display: block;
+  text-decoration: none;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center center;
+}
+.primary-post a img,
+.secondary-post a img {
+  min-width: 100%;
+  height: auto;
+}
+
+.primary-post {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%;
+  margin-right: 0;
+}
+.primary-post:last-child {
+  margin-right: 0;
+}
+.primary-post a {
+  height: 320px;
+}
+
+.secondary-post {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 48.82117%;
+}
+.secondary-post:last-child {
+  margin-right: 0;
+}
+.secondary-post:nth-child(3n) {
+  margin-right: 0;
+}
+.secondary-post:nth-child(3n+1) {
+  clear: left;
+}
+.secondary-post a {
+  height: 220px;
+}
+
+.thumbnail-title {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  background: #222;
+  min-height: 40px;
+  opacity: 0.65;
+  -moz-opacity: 0.65;
+  filter: alpha(opacity=65);
+}
+
+a:hover .thumbnail-title {
+  opacity: 0.9;
+  -moz-opacity: 0.9;
+  filter: alpha(opacity=90);
+}
+
+.thumb-post a h2 {
+  padding: 10px;
+  color: #eee;
+  text-shadow: 0 -1px 0 black;
+  display: block;
+  text-decoration: none;
+}
+
+.comment-count {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  color: #fff;
+  font-size: 14px;
+  background: #000;
+  padding: 10px 12px 0;
+  display: block;
+}
+
+/*  -----------------------------------------------------------------------------
+  [01] RESET
+  ----------------------------------------------------------------------------- */
 html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 abbr, address, cite, code, del, dfn, em, img, ins, small, strong, sub, sup, var,
 b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody,
 tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer,
 header, hgroup, menu, nav, section, summary, time, mark, audio, video {
-  margin:0;
-  padding:0;
-  border:0;
-  outline:0;
-  font-size:100%;
-  vertical-align:baseline;
-  background:transparent;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  vertical-align: baseline;
 }
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-    display:block;
-}
-html {
-	font-size: 100%;
-	height: 100%;
-}
-body {
-	background: #efefef;
-	font-family: Helvetica, Arial, sans-serif;
-	font-size: 13px;
-	line-height: 1.6em;
-	color: #333;
-	height: 100%;
-}
-strong, b, th {
-	font-weight: bold;
-}
-h1, h2, h3, h4, h5, h6 {
-	font-family: "Didact Gothic", Helvetica, Arial, sans-serif;
-	font-weight: normal;
-}
-h1 {
-	font-size: 22px;
-}
-h2 {
-	font-size: 18px;
-}
-h3, h4, h5 {
-	font-size: 14px;
-}
-h6 {
-	font-size: 13px;
-}
-em, i, blockquote, q, cite {
-	font-style: italic;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after, q:before, q:after {
-	content: "";
-	content: none;
-}
-code, kbd, pre, samp, tt {
-	font-family: "andale mono", consolas, monaco, "lucida console", "courier new", courier, monospace;
-	line-height: 1.3;
-}
-pre {
-	white-space: pre-wrap;
-}
-del, strike {
-	text-decoration: line-through;
-}
-a {
-	color: #222;
-	text-decoration: none;
-}
-a:hover {
-	text-decoration: underline;
-	-webkit-transition: color 50ms ease-in;
-	   -moz-transition: color 50ms ease-in;
-	     -o-transition: color 50ms ease-in;
-	        transition: color 50ms ease-in;
-}
-a:focus {
-	outline: 1px dotted;
-}
-img {
-	vertical-align: bottom;
-	border: 0;
-}
-ul, ol {
-	list-style: none;
-}
-input, textarea, select, button {
-	font-family: inherit;
-	font-size: 1em;
-}
-textarea { overflow: auto; }
-input[type=button], input[type=reset], input[type=submit],
-button[type=button], button[type=reset], button[type=submit] {
-	cursor: pointer;
-}
-table {
-	border: 0;
-	border-collapse: collapse;
-	border-spacing: 0;
-}
+
 .align-left {
-	text-align: left;
+  text-align: left;
 }
+
 .align-right {
-	text-align: right;
+  text-align: right;
 }
+
 .group:after {
-	visibility: hidden;
-	display: block;
-	font-size: 0;
-	content: " ";
-	clear: both;
-	height: 0;
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
 }
-.group { display: inline-block; }
+
+.group {
+  display: inline-block;
+}
+
 /* start commented backslash hack \*/
-* html .group { height: 1%; }
-.group { display: block; }
+* html .group {
+  height: 1%;
+}
+
+.group {
+  display: block;
+}
+
 /* close commented backslash hack */
 /* Test inputs + textarea */
-input[type=text],
-textarea {
-	background-color: #fff;
-	-webkit-background-clip: padding-box;
-	border: 1px solid #ccc;
-	border-top-color: #bbb;
-	font-family: Helvetica, Arial, sans-serif;
-	font-size: 13px;
-	color: #555;
-	padding: 9px 0 8px;
-	text-indent: 4px;
-	width: 99%;
-	outline: none;
-	-webkit-box-shadow: 0 2px 3px rgba(0,0,0,0.1) inset;
-	   -moz-box-shadow: 0 2px 3px rgba(0,0,0,0.1) inset;
-	     -o-box-shadow: 0 2px 3px rgba(0,0,0,0.1) inset;
-	        box-shadow: 0 2px 3px rgba(0,0,0,0.1) inset;
-}
-
-/*	-----------------------------------------------------------------------------
-	[02] CORE - Look inside 960.css for the 960.gs grid used for layout
-	----------------------------------------------------------------------------- */
-.masthead {
-	background-color: #fff;
-	padding: 20px 0;
-	border-bottom: 1px solid #ccc;
-	position: relative;
-	z-index: 2;
-	margin-bottom: 20px;
-	-webkit-box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-	   -moz-box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-	     -o-box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-	        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-.masthead a {
-	font-weight: normal;
-	text-decoration: none;
-}
-.masthead a:hover {
-	color: #777;
-	-webkit-transition: color 200ms ease-in;
-	   -moz-transition: color 200ms ease-in;
-	     -o-transition: color 200ms ease-in;
-	        transition: color 200ms ease-in;
-}
-.masthead .logo {
-	padding-top: 4px;
-}
-.masthead .logo a:hover img {
-	opacity: 0.8;
-	-moz-opacity: 0.8;
-	filter:alpha(opacity=80);
-}
-/* Nested custom menus */
-ul.menu {
-	float: right;
-	border: 1px solid #ccc;
-}
-ul.menu a {
-	font-family: "Didact Gothic", Helvetica, Arial, sans-serif;
-	font-size: 14px;
-	text-transform: uppercase;
-	color: #aaa;
-	display: block;
-	padding: 1px 12px 0;
-	line-height: 36px;
-	font-weight: 300;
-}
-ul.menu ul a {
-	font-size: 13px;
-	text-transform: none;
-}
-ul.menu a:hover,
-ul.menu li:hover,
-ul.menu li:hover > a {
-	color: #fff;
-	background-color: #222;
-	text-decoration: none;
-}
-ul.menu li {
-	position: relative;
-}
-ul.menu > li {
-	border-left: 1px solid #ccc;
-	float: left;
-}
-ul.menu > li:first-child {
-	border-left: none;
-}
-ul.menu ul,
-ul.menu ul ul {
-	display: none;
-	background: #fff;
-	position: absolute;
-	right: -1px;
-	top: 37px;
-	z-index: 2001;
-}
-ul.menu ul ul {
-	right: 149px;
-	top: 1px;
-}
-ul.menu li:hover > ul {
-	display: block;
-	width: 150px;
-	-webkit-box-shadow: -3px 1px 3px rgba(0,0,0,0.1);
-	   -moz-box-shadow: -3px 1px 3px rgba(0,0,0,0.1);
-	     -o-box-shadow: -3px 1px 3px rgba(0,0,0,0.1);
-	        box-shadow: -3px 1px 3px rgba(0,0,0,0.1);
-}
-ul.menu ul a {
-	border: 1px solid #ccc;
-	margin-top: -1px;
-	line-height: 18px;
-	padding-top: 5px;
-	padding-bottom: 5px;
-}
-/* Add icon to represent nested ul"s */
-li.menu-children > a,
-li.menu-children > a:hover,
-.sub-menu .menu-children > a,
-.sub-menu .menu-children > a:hover {
-	padding-right: 25px;
-	background-image: url("images/icn-expand.png");
-	background-position: right -1px;
-	background-repeat: no-repeat;
-}
-li.menu-children > a:hover,
-li.menu-children:hover > a {
-	background-position: right -37px;
-}
-.sub-menu .menu-children > a,
-.sub-menu .menu-children > a:hover {
-	background-position: right -5px;
-}
-.sub-menu .menu-children > a:hover,
-.sub-menu .menu-children:hover > a {
-	background-position: right -41px;
-}
+/*  -----------------------------------------------------------------------------
+  [02] CORE - Look inside 960.css for the 960.gs grid used for layout
+  ----------------------------------------------------------------------------- */
 /* Basic structure */
-.main-column {
-	position: relative;
-	z-index: 1;
-}
-.main-column,
-.sidebar-column {
-	padding-top: 20px;
-	padding-bottom: 20px;
-}
 #middle,
 #footer {
-	padding-top: 20px;
-	padding-bottom: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
+
 #middle {
-	padding-bottom: 0;
+  padding-bottom: 0;
 }
+
 .footer-left,
 .footer-right {
-	padding-top: 20px;
-}
-#footer .grid-12 {
-	border-top: 1px solid #ccc;
-}
-#main .container-12 {
-	background: #fff;
-	border: 1px solid #ccc;
-	padding-left: 10px;
-	padding-right: 10px;
-	-webkit-box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-	   -moz-box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-	     -o-box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-	        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding-top: 20px;
 }
 
-/*	-----------------------------------------------------------------------------
-	[03] THUMBS
-	----------------------------------------------------------------------------- */
-.primary-post,
-.secondary-post {
-	background-color: #eee;
-	position: relative;
-	overflow: hidden;
-	margin-bottom: 20px;
+#footer .grid-12 {
+  border-top: 1px solid #ccc;
 }
-.primary-post {
-	margin-bottom: 20px;
+
+#wrapper .container-12 {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding-left: 10px;
+  padding-right: 10px;
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  -o-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-.primary-post,
-.primary-post a {
-	height: 250px;
-}
-.secondary-post,
-.secondary-post a {
-	height: 150px;
-}
-.thumb-post a {
-	text-decoration: none;
-	display: block;
-	overflow: hidden;
-}
-.thumb-post a img {
-	min-width: 100%;
-	height: auto;
-}
-.thumbnail-title {
-	position: absolute;
-	z-index: 2;
-	width: 100%;
-	bottom: 0;
-	left: 0;
-	background: #222;
-	min-height: 40px;
-	opacity: 0.65;
-	-moz-opacity: 0.65;
-	filter:alpha(opacity=65);
-}
-a:hover .thumbnail-title {
-	opacity: 0.9;
-	-moz-opacity: 0.9;
-	filter:alpha(opacity=90);
-}
-.thumb-post a h2 {
-	padding: 10px;
-	color: #eee;
-	text-shadow: 0 -1px 0 rgba(0,0,0,1.0);
-	display: block;
-	text-decoration: none;
-}
-.secondary-post.right-edge,
-.back-page .secondary-post:nth-child(2n),
-.search-page .secondary-post:nth-child(2n) {
-	margin-left: 20px;
-}
-.comment-count {
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	color: #fff;
-	font-size: 14px;
-	background: #000;
-	padding: 10px 12px 0;
-	display: block;
-}
+
+/*  -----------------------------------------------------------------------------
+  [03] THUMBS
+  ----------------------------------------------------------------------------- */
 /* Loop paging controls */
 .loop-paging .show-previous-page {
-	float: left;
+  float: left;
 }
-.loop-paging .show-next-page {
-	float: right;
-}
-.loop-paging a {
-	background-color: #fff;
-	font-family: "Didact Gothic", Helvetica, Arial, sans-serif;
-	text-transform: uppercase;
-	padding: 1px 12px 0;
-	line-height: 32px;
-	display: inline-block;
-	border: 1px solid #ccc;
-	color: #aaa;
-	font-weight: 400;
-	text-decoration: none;
-}
-.loop-paging a:hover {
-	color: #fff;
-	background-color: #222;
-}
-.loop-paging a:active {
-	position: relative;
-	top: 1px;
-}
-.sticky {}
 
-/*	-----------------------------------------------------------------------------
-	[04] SINGLES
-	----------------------------------------------------------------------------- */
+.loop-paging .show-next-page {
+  float: right;
+}
+
+.loop-paging a {
+  background-color: #fff;
+  font-family: "Didact Gothic", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  padding: 1px 12px 0;
+  line-height: 32px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  color: #aaa;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.loop-paging a:hover {
+  color: #fff;
+  background-color: #222;
+}
+
+.loop-paging a:active {
+  position: relative;
+  top: 1px;
+}
+
+/*  -----------------------------------------------------------------------------
+  [04] SINGLES
+  ----------------------------------------------------------------------------- */
 .single-entry h2 {
-	padding-top: 4px;
-	font-size: 22px;
-	margin-bottom: 20px;
+  padding-top: 4px;
+  font-size: 22px;
+  margin-bottom: 20px;
 }
+
 .post {
-	padding-bottom: 5px;
+  padding-bottom: 5px;
 }
+
 .post h1,
 .post h2,
 .post h3,
 .post h4,
 .post h5,
 .post h6 {
-	margin-bottom: 15px;
+  margin-bottom: 15px;
 }
+
 .post a {
-	text-decoration: underline;
+  text-decoration: underline;
 }
+
 .post a:hover {
-	text-decoration: none;
+  text-decoration: none;
 }
+
 .post a img {
-	border: none;
+  border: none;
 }
+
 .single-entry .post img {
-	width: auto;
-	max-width: 100%;
-	height: auto;
+  width: auto;
+  max-width: 100%;
+  height: auto;
 }
+
 .single-entry .post .wp-caption {
-	max-width: 100%;
-	height: auto;
-	position: relative;
-	margin-bottom: 15px;
-	overflow: hidden;
+  max-width: 100%;
+  height: auto;
+  position: relative;
+  margin-bottom: 15px;
+  overflow: hidden;
 }
+
 .single-entry .post .wp-caption a {
-	display: block;
+  display: block;
 }
+
 .single-entry .post .wp-caption-text {
-	text-align: center;
-	margin: 0;
-	background: #222;
-	color: #fff;
-	position: absolute;
-	padding: 8px 10px;
-	bottom: 0;
-	left: 0;
-	font-family: "Didact Gothic", Helvetica, Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  background: #222;
+  color: #fff;
+  position: absolute;
+  padding: 8px 10px;
+  bottom: 0;
+  left: 0;
+  font-family: "Didact Gothic", Helvetica, Arial, sans-serif;
 }
+
 .single-entry .gallery-item {
-	position: relative;
+  position: relative;
 }
+
 .single-entry .post .gallery-caption {
-	position: static;
-	background: transparent;
-	color: #333;
-	font-size: 16px;
+  position: static;
+  background: transparent;
+  color: #333;
+  font-size: 16px;
 }
+
 .single-entry .post object,
 .single-entry .post embed {
-	width: 100%;
-	max-width: 100%;
+  width: 100%;
+  max-width: 100%;
 }
+
 .single-entry .post p,
 .single-entry .post ul,
 .single-entry .post ol,
 .single-entry .post blockquote,
 .single-entry .attachment p {
-	margin-bottom: 15px;
-}
-.single-entry .post .alignright {
-	float: right;
-	margin: 5px 0 10px 10px;
-}
-.single-entry .post .alignleft {
-	float: left;
-	margin: 5px 10px 10px 0;
-}
-.single-entry .post .aligncenter {
-	text-align: center;
-}
-.single-entry .post blockquote {
-	font-size: 1.2em;
-	line-height: 1.5em;
-	margin-left: 20px;
-	border-left: 1px solid #ccc;
-	padding-left: 10px;
-	color: #6c6c6c;
-}
-.single-entry .post ul,
-.single-entry .post ol {
-	margin-left: 25px;
-}
-.single-entry .post ul {
-	list-style: disc;
-}
-.single-entry .post ol {
-	list-style: decimal;
-}
-.paginate-posts {
-	margin-bottom: 20px;
-}
-.paginate-posts li {
-	width: 50%;
-}
-.paginate-posts .older {
-	float: left;
-}
-.paginate-posts .newer {
-	float: right;
-}
-.paginate-posts .newer a {
-	border-left: 1px solid #fff;
-}
-.paginate-posts a {
-	background-color: #eee;
-	padding: 8px 0;
-	font-family: "Didact Gothic", Helvetica, Arial, sans-serif;
-	text-transform: uppercase;
-	color: #aaa;
-	text-align: center;
-	font-weight: normal;
-	display: block;
-	line-height: 1em;
-}
-.paginate-posts a:hover {
-	background-color: #222;
-	color: #fff;
-	text-decoration: none;
-}
-.paginate-posts a:active {
-	position: relative;
-	top: 1px;
-}
-.paginate-posts a em {
-	display: block;
-}
-/* Post meta row */
-.post-meta {
-	clear: both;
-	border-top: 1px solid #ccc;
-	border-bottom: 1px solid #ccc;
-	margin-bottom: 20px;
-	padding: 15px 0;
-}
-.post-meta div {
-	float: left;
-	margin-right: 25px;
-}
-.post-meta span {
-	display: block;
-}
-.post-meta .sub-title {
-	color: #aaa;
-	text-transform: uppercase;
-	font-size: 11px;
-	line-height: 14px;
-}
-.post-meta .title {
-	font-family: "Didact Gothic", Helvetica, Arial, sans-serif;
-	font-size: 14px;
+  margin-bottom: 15px;
 }
 
-/*	-----------------------------------------------------------------------------
-	[05] COMMENTS
-	----------------------------------------------------------------------------- */
+.single-entry .post .alignright {
+  float: right;
+  margin: 5px 0 10px 10px;
+}
+
+.single-entry .post .alignleft {
+  float: left;
+  margin: 5px 10px 10px 0;
+}
+
+.single-entry .post .aligncenter {
+  text-align: center;
+}
+
+.single-entry .post blockquote {
+  font-size: 1.2em;
+  line-height: 1.5em;
+  margin-left: 20px;
+  border-left: 1px solid #ccc;
+  padding-left: 10px;
+  color: #6c6c6c;
+}
+
+.single-entry .post ul,
+.single-entry .post ol {
+  margin-left: 25px;
+}
+
+.single-entry .post ul {
+  list-style: disc;
+}
+
+.single-entry .post ol {
+  list-style: decimal;
+}
+
+.paginate-posts {
+  margin-bottom: 20px;
+}
+
+.paginate-posts li {
+  width: 50%;
+}
+
+.paginate-posts .older {
+  float: left;
+}
+
+.paginate-posts .newer {
+  float: right;
+}
+
+.paginate-posts .newer a {
+  border-left: 1px solid #fff;
+}
+
+.paginate-posts a {
+  background-color: #eee;
+  padding: 8px 0;
+  font-family: "Didact Gothic", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  color: #aaa;
+  text-align: center;
+  font-weight: normal;
+  display: block;
+  line-height: 1em;
+}
+
+.paginate-posts a:hover {
+  background-color: #222;
+  color: #fff;
+  text-decoration: none;
+}
+
+.paginate-posts a:active {
+  position: relative;
+  top: 1px;
+}
+
+.paginate-posts a em {
+  display: block;
+}
+
+/* Post meta row */
+.post-meta {
+  clear: both;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 20px;
+  padding: 15px 0;
+}
+
+.post-meta div {
+  float: left;
+  margin-right: 25px;
+}
+
+.post-meta span {
+  display: block;
+}
+
+.post-meta .sub-title {
+  color: #aaa;
+  text-transform: uppercase;
+  font-size: 11px;
+  line-height: 14px;
+}
+
+.post-meta .title {
+  font-family: "Didact Gothic", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+}
+
+/*  -----------------------------------------------------------------------------
+  [05] COMMENTS
+  ----------------------------------------------------------------------------- */
 #comments,
 #respond {
-	clear: both;
-	overflow: hidden;
-	padding-top: 20px;
-	position: relative;
+  clear: both;
+  overflow: hidden;
+  padding-top: 20px;
+  position: relative;
 }
+
 .comments-title,
 #reply-title {
-	font-size: 16px;
-	border-bottom: 1px solid #ccc;
-	margin-bottom: 10px;
-	padding-bottom: 10px;
-	text-transform: uppercase;
+  font-size: 16px;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  text-transform: uppercase;
 }
+
 .comments-title {
-	border-bottom: 0;
-	margin-bottom: 0;
+  border-bottom: 0;
+  margin-bottom: 0;
 }
+
 .comment-meta {
-	margin-bottom: 5px;
+  margin-bottom: 5px;
 }
+
 ul.comments-list,
 ul.comments-list ul.children {
-	padding-top: 10px;
+  padding-top: 10px;
 }
+
 li.comment {
-	padding-bottom: 10px;
+  padding-bottom: 10px;
 }
+
 li.comment .comment-body {
-	border-top: 1px solid #ccc;
-	padding-top: 20px;
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
 }
+
 li.comment .avatar {
-	float: left;
-	margin-right: 12px;
+  float: left;
+  margin-right: 12px;
 }
+
 li.comment .fn {
-	font-style: normal;
-	font-family: "Didact Gothic", Helvetica, Arial, sans-serif;
-	font-size: 15px;
+  font-style: normal;
+  font-family: "Didact Gothic", Helvetica, Arial, sans-serif;
+  font-size: 15px;
 }
+
 li.comment .says {
-	display: none;
+  display: none;
 }
+
 li.comment .reply {
-	margin-bottom: 20px;
+  margin-bottom: 20px;
 }
+
 li.comment .reply a:after {
-	content: " ↵";
+  content: " ↵";
 }
+
 li.comment p,
 li.comment .reply {
-	margin-left: 76px;
+  margin-left: 76px;
 }
+
 li.comment p {
-	margin-bottom: 15px;
+  margin-bottom: 15px;
 }
+
 li.comment ul,
 li.comment ol {
-	margin-left: 100px;
-	margin-bottom: 15px;
+  margin-left: 100px;
+  margin-bottom: 15px;
 }
+
 li.comment ul {
-	list-style: disc;
+  list-style: disc;
 }
+
 li.comment ol {
-	list-style: decimal;
+  list-style: decimal;
 }
+
 li.comment ul.children {
-	margin-left: 0;
-	margin-bottom: 0;
+  margin-left: 0;
+  margin-bottom: 0;
 }
+
 ul.children li.comment p,
 ul.children li.comment .reply {
-	margin-left: 44px;
+  margin-left: 44px;
 }
+
 ul.children .comment-body {
-	margin-left: 32px;
+  margin-left: 32px;
 }
+
 ul.children .comment-author .avatar {
-	height: 32px;
-	width: 32px;
+  height: 32px;
+  width: 32px;
 }
+
 #commentform p {
-	float: left;
-	width: 100%;
-	padding-bottom: 10px;
-	margin-left: 0;
+  float: left;
+  width: 100%;
+  padding-bottom: 10px;
+  margin-left: 0;
 }
+
 #commentform label,
 #commentform .required {
-	margin-right: 5px;
-	font-weight: bold;
-	float: left;
-	margin-top: 6px;
+  margin-right: 5px;
+  font-weight: bold;
+  float: left;
+  margin-top: 6px;
 }
+
 #commentform .required {
-	color: #990000;
+  color: #990000;
 }
+
 #commentform input[type=text],
 #commentform textarea,
 .comment-notes {
-	float: right;
-	width: 80%;
-	max-width: 80%;
+  float: right;
+  width: 80%;
+  max-width: 80%;
 }
+
 #commentform textarea {
-	overflow: auto;
+  overflow: auto;
 }
+
 .comment-notes,
 .no-comments {
-	padding: 10px 0;
-	color: #aaa;
+  padding: 10px 0;
+  color: #aaa;
 }
+
 .form-submit {
-	text-align: right;
+  text-align: right;
 }
+
 .form-submit input[type=submit] {
-	background-color: #fff;
-	font-family: "Didact Gothic", Helvetica, Arial, sans-serif;
-	text-transform: uppercase;
-	padding: 0 12px;
-	height: 36px;
-	font-size: 13px;
-	line-height: 36px;
-	display: inline-block;
-	border: 1px solid #ccc;
-	color: #aaa;
-	font-weight: 400;
-	text-decoration: none;
+  background-color: #fff;
+  font-family: "Didact Gothic", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  padding: 0 12px;
+  height: 36px;
+  font-size: 13px;
+  line-height: 36px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  color: #aaa;
+  font-weight: 400;
+  text-decoration: none;
 }
+
 .form-submit input[type=submit]:hover {
-	color: #fff;
-	background-color: #222;
+  color: #fff;
+  background-color: #222;
 }
+
 .form-submit input[type=submit]:active {
-	position: relative;
-	top: 1px;
-}
-.comments-list .bypostauthor {
-
+  position: relative;
+  top: 1px;
 }
 
-/*	-----------------------------------------------------------------------------
-	[06] WIDGETS
-	----------------------------------------------------------------------------- */
-.sidebar-column .widget {
-	margin-bottom: 20px;
-}
-.widget .widgettitle {
-	border-bottom: 1px solid #ccc;
-	padding-bottom: 10px;
-	margin-bottom: 10px;
-	text-transform: uppercase;
-	overflow: hidden;
-}
-.search-form {
-	padding: 5px;
-	background-color: #eee;
-}
-#middle .widget {
-	margin-bottom: 20px;
-}
-#middle .widget_categories {
-	overflow: hidden;
-}
-#middle .widget_categories > ul {
-	margin-left: -20px;
-	overflow: hidden;
-}
-#middle .widget_categories li {
-	float: left;
-	width: 140px;
-	margin-left: 20px;
-}
-#middle .widget_categories ul ul,
-#middle .widget_categories ul ul ul,
-#middle .widget_categories ul ul ul ul,
-#middle .widget_categories ul ul ul ul ul {
-	padding-top: 3px;
-	margin-bottom: -3px;
-}
-#middle .widget_categories ul ul li {
-	margin-left: 0;
-}
-#middle .widget_categories li {
-	color: #aaa;
-	text-align: right;
-	padding: 3px 0;
-}
-#middle .widget_categories li a {
-	float: left;
-}
-#bottom  .grid-12 {
-	width: 960px;
-	padding-bottom: 20px;
-}
-#bottom .widget {
-	padding-top: 20px;
-	float: left;
-	width: 300px;
-	margin-right: 20px;
-}
-.widget_calendar table {
-	border-collapse: collapse;
-	width: 100%;
-	max-width: 300px;
-	text-align: center;
-}
-.widget_calendar caption {
-	padding-bottom: 8px;
-}
-.widget_calendar td {
-	padding: 3px 0;
-	border: 2px solid transparent;
-}
-.widget_calendar td a {
-	display: block;
-	background: #eee;
-}
-
-.widget_rss a.rsswidget {
-	float: left;
-	margin-right: 5px;
-}
-.widget_rss a.rsswidget img {
-	position: relative;
-	top: -3px;
-}
-.widget li {
-	color: #6c6c6c;
-}
-.widget_recent_entries li a,
-.widget_pages li a,
-.widget_meta li a,
-.widget ul.blogroll li,
-.widget_archive li,
-.widget_rss li {
-	display: block;
-}
-.widget_rss li {
-	overflow: hidden;
-}
-/* Custom menu as plain list support */
-.widget_nav_menu ul.menu {
-	float: none;
-	border: none;
-	border-bottom: 1px solid #ccc;
-}
-.widget_nav_menu ul.menu a {
-	padding-left: 6px;
-	padding-right: 6px;
-}
-.widget_nav_menu ul.menu li {
-	border: 1px solid #ccc;
-	border-width: 1px 0 0;
-	float: none;
-}
-.widget_nav_menu ul.menu li li {
-	border-top: 0;
-}
-.widget_nav_menu ul.menu li li a {
-	padding-left: 12px;
-	padding-right: 12px;
-}
-
-/*	-----------------------------------------------------------------------------
-	[07] SEARCH
-	----------------------------------------------------------------------------- */
+/*  -----------------------------------------------------------------------------
+  [07] SEARCH
+  ----------------------------------------------------------------------------- */
 .search-results-info {
-	overflow: hidden;
-	background: #222;
-	color: #eee;
-	font-family: "Didact Gothic", Helvetica, Arial, sans-serif;
-	font-size: 14px;
-	position: relative;
+  overflow: hidden;
+  background: #222;
+  color: #eee;
+  font-family: "Didact Gothic", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  position: relative;
 }
+
 .results-title {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	padding: 10px;
-	font-size: 16px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 10px;
+  font-size: 16px;
 }

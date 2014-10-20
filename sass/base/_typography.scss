@@ -1,0 +1,62 @@
+// General
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: #efefef;
+  color: #555;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  line-height: 1.65;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+// Headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 26px;
+}
+
+h2 {
+  font-size: 22px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+h4 {
+  font-size: 18px;
+}
+
+h5,
+h6 {
+  font-size: 16px;
+}
+
+h6 {
+  text-transform: uppercase;
+  font-style: italic;
+}
+
+// Links
+a {
+  color: $link-color;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+    color: darken($link-color, 10%);
+  }
+}

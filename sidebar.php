@@ -4,7 +4,7 @@
  * @since Unstandard 3.0
  */
 ?>
-<div class="sidebar-column grid-4">
+<div class="sidebar-column">
 
 	<?php if ( is_single() ) { ?>
 

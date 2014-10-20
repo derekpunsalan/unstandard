@@ -1,8 +1,19 @@
 jQuery(document).ready(function($) {
-	
-	// Add has-children class to nested menu
-	$('ul.menu li').has('ul').addClass('menu-children');
-	
+	// Menu
+	//open the lateral panel
+	$('.cd-btn').on('click', function(event){
+		event.preventDefault();
+		$('.cd-panel').addClass('is-visible');
+	});
+	//clode the lateral panel
+	$('.cd-panel').on('click', function(event){
+		if( $(event.target).is('.cd-panel') || $(event.target).is('.cd-panel-close') ) {
+			$('.cd-panel').removeClass('is-visible');
+			event.preventDefault();
+		}
+	});
+
+
 	// Search input text
 	var textInputs = $('.search-input');
 	var mainSearch = $('.search-form .search-input');
@@ -19,12 +30,12 @@ jQuery(document).ready(function($) {
 	mainSearch.blur(function(){
 		if($(this).attr('value') == '') $(this).attr('value', mainSearchDefault);
 	});
-	
+
 	// Every nth child of the secondary thumbnails
-	$('.front-page .secondary-post:nth-child(2n+1)').addClass('right-edge');
-	$('.back-page .secondary-post:nth-child(2n), .search-page .secondary-post:nth-child(2n)').addClass('right-edge');
+	// $('.front-page .secondary-post:nth-child(2n+1)').addClass('right-edge');
+	// $('.back-page .secondary-post:nth-child(2n), .search-page .secondary-post:nth-child(2n)').addClass('right-edge');
 
 	// Masonry
 	$('#bottom .grid-12').masonry({ singleMode: true });
-	
+
 });

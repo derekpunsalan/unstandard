@@ -1,0 +1,14 @@
+// Consolidate Bourbon Neat grid rules into single file
+
+// Main header
+.masthead-inner {
+  @include outer-container;
+
+  .main-logo {
+    @include span-columns(11);
+  }
+
+  .nav-toggle {
+    @include span-columns(1);
+  }
+}

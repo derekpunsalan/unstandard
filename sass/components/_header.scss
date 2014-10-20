@@ -1,0 +1,21 @@
+// Primary site header
+.masthead {
+  background: #fff;
+  padding: 20px;
+  margin: 0 0 30px;
+
+  .nav-toggle {
+    text-align: right;
+
+    a {
+      font-size: 22px;
+      display: inline-block;
+      height: 36px;
+      line-height: 34px;
+      width: 36px;
+      text-align: center;
+      border: 1px solid $border-color;
+      border-radius: 4px;
+    }
+  }
+}

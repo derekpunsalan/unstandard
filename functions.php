@@ -38,7 +38,7 @@ register_nav_menus(array(
 	'top_menu' => __( 'Top Navigation' ),
 ));
 function dp_nav_fallback() {
-	echo '<div class="main-nav grid-7"><ul class="menu">';
+	echo '<div class="main-nav"><ul class="menu">';
 	echo '<li class="menu-item"><a href="'.home_url().'"><span class="inner">Home</span></a></li>';
 	echo '</ul></div>';
 }

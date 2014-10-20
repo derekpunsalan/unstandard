@@ -1,9 +1,4 @@
-<?php
-/**
- * @package Unstandard
- * @since Unstandard 3.0
- */
-?>
+
 		<div id="middle">
 
 			<div class="grid-12">
@@ -70,9 +65,24 @@
 
 	<?php wp_footer(); ?>
 
-	</div><!-- .container-12 -->
+</div><!-- #wrapper -->
 
-</div><!-- #main -->
+<div class="cd-panel from-right">
+    <header class="cd-panel-header">
+        <a href="#0" class="cd-panel-close">Close</a>
+    </header>
+
+    <div class="cd-panel-container">
+        <div class="cd-panel-content">
+            <?php wp_nav_menu(array(
+            	'menu' => 'top_menu',
+            	'container_class' => 'main-nav',
+            	'fallback_cb' => 'dp_nav_fallback',
+            	'depth' => 2
+            )); ?>
+        </div> <!-- cd-panel-content -->
+    </div> <!-- cd-panel-container -->
+</div> <!-- cd-panel -->
 
 </body>
 
