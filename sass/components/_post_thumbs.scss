@@ -11,6 +11,7 @@
     overflow: hidden;
     background-size: cover;
     background-position: center center;
+    position: relative;
 
     img {
       min-width: 100%;
@@ -37,41 +38,42 @@
   }
 }
 
-
-
-
+// Title text inside post thumbnails
 .thumbnail-title {
   position: absolute;
-  z-index: 2;
+  z-index: 1;
   width: 100%;
   bottom: 0;
   left: 0;
-  background: #222;
-  min-height: 40px;
-  opacity: 0.65;
-  -moz-opacity: 0.65;
-  filter:alpha(opacity=65);
+  background: rgba(black, 0);
+
+  a:hover & {
+    background: rgba(black, 0.7);
+    @include transition(background 250ms ease-in-out);
+  }
+
+  // Title
+  h2 {
+    padding: 10px 20px;
+    color: rgba(white, 0.8);
+    display: block;
+    text-decoration: none;
+  }
 }
-a:hover .thumbnail-title {
-  opacity: 0.9;
-  -moz-opacity: 0.9;
-  filter:alpha(opacity=90);
-}
-.thumb-post a h2 {
-  padding: 10px;
-  color: #eee;
-  text-shadow: 0 -1px 0 rgba(0,0,0,1.0);
-  display: block;
-  text-decoration: none;
-}
+
+// Comments
 .comment-count {
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  color: #fff;
+  right: 20px;
+  top: 20px;
+  color: rgba(white, 0.9);
   font-size: 14px;
-  background: #000;
-  padding: 10px 12px 0;
-  display: block;
+  text-align: center;
+  border-radius: 100%;
+  height: 40px;
+  width: 40px;
+  line-height: 36px;
+  background: transparent;
+  border: 1px solid rgba(white, 0.5);
+  display: inline-block;
 }

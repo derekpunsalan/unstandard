@@ -40,10 +40,9 @@
 							<?php echo dp_text_truncate(get_the_title()); ?>
 						<?php } ?>
 					</h2>
-
-					<span class="comment-count"><?php comments_number('0','1','%'); ?></span>
 				</div>
 
+				<span class="comment-count"><?php comments_number('0','1','%'); ?></span>
 			</a>
 
 		</div>
