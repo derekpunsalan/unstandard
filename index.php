@@ -2,7 +2,7 @@
 
 <div class="content-box">
 
-	<div class="main-column <?php if ( is_search() ) {?> search-page<?php } elseif ( ! is_archive() && ! is_paged() ) { ?> front-page<?php } else { ?> back-page<?php } ?>">
+	<div class="main-column <?php if ( is_search() ) {?> search-page<?php } elseif ( ! is_archive() && ! is_paged() ) { ?> front-page<?php } else { ?> back-page<?php } ?> <?php if ( !is_active_sidebar( 'sidebar-widget-container' )) { ?>no-sidebar<?php } ?>">
 
 		<?php if (is_search() ) { ?>
 

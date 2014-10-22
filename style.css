@@ -636,6 +636,7 @@ a:hover {
   margin-left: auto;
   margin-right: auto;
   background: white;
+  padding: 20px 20px 5px 20px;
 }
 .content-box:after {
   content: "";
@@ -647,9 +648,17 @@ a:hover {
   display: block;
   margin-right: 2.35765%;
   width: 65.88078%;
-  padding: 20px 0 5px 20px;
 }
 .content-box .main-column:last-child {
+  margin-right: 0;
+}
+.content-box .main-column.no-sidebar {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%;
+}
+.content-box .main-column.no-sidebar:last-child {
   margin-right: 0;
 }
 .content-box .sidebar-column {
@@ -657,7 +666,6 @@ a:hover {
   display: block;
   margin-right: 2.35765%;
   width: 31.76157%;
-  padding: 20px 20px 20px 0;
 }
 .content-box .sidebar-column:last-child {
   margin-right: 0;

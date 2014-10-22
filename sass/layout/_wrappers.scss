@@ -1,16 +1,18 @@
 // Content wrapper
 .content-box {
-  $content-padding: 20px;
   @include outer-container;
   background: white;
+  padding: 20px 20px 5px 20px;
 
   .main-column {
     @include span-columns(8);
-    padding: $content-padding 0 5px $content-padding;
+
+    &.no-sidebar {
+      @include span-columns(12);
+    }
   }
 
   .sidebar-column {
     @include span-columns(4);
-    padding: $content-padding $content-padding $content-padding 0;
   }
 }

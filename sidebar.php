@@ -1,33 +1,14 @@
-<?php
-/**
- * @package Unstandard
- * @since Unstandard 3.0
- */
-?>
+<?php if (is_active_sidebar( 'sidebar-widget-container' )) : ?>
 <div class="sidebar-column">
 
 	<?php if ( is_single() ) { ?>
-
-		<ul class="paginate-posts group">
-			<li class="older"><?php previous_post_link('%link', '<span>Older <em>&larr;</em></span>') ?></li>
-			<li class="newer"><?php next_post_link('%link', '<span>Newer <em>&rarr;</em></span>') ?></li>
-		</ul>
-
+	<ul class="paginate-posts group">
+		<li class="older"><?php previous_post_link('%link', '<span>Older <em>&larr;</em></span>') ?></li>
+		<li class="newer"><?php next_post_link('%link', '<span>Newer <em>&rarr;</em></span>') ?></li>
+	</ul>
 	<?php } ?>
 
-	<?php if (is_active_sidebar( 'sidebar-widget-container' )) : ?>
+	<?php dynamic_sidebar( 'sidebar-widget-container' ); ?>
 
-		<?php dynamic_sidebar( 'sidebar-widget-container' ); ?>
-
-	<?php else : ?>
-
-		<div class="widget">
-
-			<?php the_widget( 'WP_Widget_Search' ); ?>
-			<?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
-
-		</div><!-- .widget -->
-
-	<?php endif; ?>
-
-</div><!-- .sidebar-column -->
+</div>
+<?php endif; ?>
