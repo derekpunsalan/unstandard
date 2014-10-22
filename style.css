@@ -701,14 +701,13 @@ a:hover {
 }
 
 .masthead {
-  background: #fff;
   padding: 20px;
-  margin: 0 0 30px;
 }
 .masthead .nav-toggle {
   text-align: right;
 }
 .masthead .nav-toggle a {
+  background: white;
   font-size: 22px;
   display: inline-block;
   height: 36px;
