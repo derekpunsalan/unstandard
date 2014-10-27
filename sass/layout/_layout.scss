@@ -1,8 +1,13 @@
 // Content wrapper
+#wrapper {
+  background: white;
+  @include outer-container;
+  padding: 25px 20px 5px 20px;
+  margin-bottom: 30px;
+}
+
 .content-box {
   @include outer-container;
-  background: white;
-  padding: 25px 20px 5px 20px;
 
   .main-column {
     @include span-columns(8);

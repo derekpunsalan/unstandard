@@ -1,0 +1,13 @@
+// Footer layout and links
+#footer {
+  @include outer-container;
+
+  .footer-left,
+  .footer-right {
+    @include span-columns(6);
+  }
+
+  .footer-right {
+    text-align: right;
+  }
+}

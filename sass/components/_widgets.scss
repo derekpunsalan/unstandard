@@ -1,25 +1,34 @@
-.sidebar-column,
-#middle,
+// Widget zones
+.widgets-zone {
+  @include outer-container;
+}
+
+// Divide bottom widgets into three columns
 #bottom {
   .widget {
-    margin-bottom: 20px;
+    @include span-columns(4);
+  }
+}
 
-    // Define widget title separators
-    .widgettitle {
-      border-bottom: 1px solid $border-color;
-      text-transform: uppercase;
-      margin-bottom: 5px;
-    }
+// General widget styles
+.widget {
+  margin-bottom: 20px;
 
-    // Present unordered lists as plain lists
-    ul {
-      list-style: none;
-    }
+  // Define widget title separators
+  .widgettitle {
+    border-bottom: 1px solid $border-color;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
 
-    // Search widget
-    &_search {
+  // Present unordered lists as plain lists
+  ul {
+    list-style: none;
+  }
 
-    }
+  // Search widget
+  &_search {
+
   }
 }
 

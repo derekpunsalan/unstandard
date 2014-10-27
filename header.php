@@ -24,8 +24,6 @@
 
 <body <?php body_class(); ?>>
 
-<div id="wrapper">
-
 	<header class="masthead">
 		<div class="masthead-inner">
 			<div class="main-logo">
@@ -38,3 +36,5 @@
 			</div>
 		</div>
 	</header>
+
+	<div id="wrapper">
