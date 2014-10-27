@@ -2,7 +2,7 @@
 		<?php include(TEMPLATEPATH . '/inc/bottom-widgets.php'); ?>
 		<footer id="footer">
 			<div class="footer-left">
-				<a href="<?php echo home_url(); ?>/" title="Home"><?php bloginfo('name'); ?></a> - <a href="<?php bloginfo('rss2_url'); ?>">Content (RSS)</a>
+				<a href="<?php echo home_url(); ?>/" title="Home"><?php bloginfo('name'); ?></a> - <a href="<?php bloginfo('rss2_url'); ?>">Subscribe (RSS)</a>
 			</div>
 			<div class="footer-right">
 				<a href="http://5thirtyone.com/the-unstandard" title="Download the Unstandard WordPress Theme">Unstandard</a>
