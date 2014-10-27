@@ -31,10 +31,21 @@
 
 .secondary-post {
   @include span-columns(6);
-  @include omega(3n);
 
   a {
     height: 220px;
+  }
+}
+
+// nth-child helper for post thumbnails
+.front-page {
+  .secondary-post {
+    @include omega(odd);
+  }
+}
+.back-page {
+  .secondary-post {
+    @include omega(even);
   }
 }
 
@@ -54,7 +65,8 @@
 
   // Title
   h2 {
-    padding: 10px 20px;
+    padding: 15px 20px;
+    line-height: 1.4;
     color: rgba(white, 0.8);
     display: block;
     text-decoration: none;

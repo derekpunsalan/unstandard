@@ -49,11 +49,9 @@
 
 		<?php endwhile; ?>
 
-		<div class="loop-paging grid-8 alpha omega">
-
-			<p class="show-previous-page"><?php previous_posts_link('&laquo; previous'); ?></p>
-			<p class="show-next-page"><?php next_posts_link('next &raquo;'); ?></p>
-
+		<div class="loop-paging">
+			<?php previous_posts_link('Prev'); ?>
+			<?php next_posts_link('Next'); ?>
 		</div>
 
 		<?php else : endif; ?>

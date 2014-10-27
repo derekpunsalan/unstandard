@@ -636,7 +636,7 @@ a:hover {
   margin-left: auto;
   margin-right: auto;
   background: white;
-  padding: 20px 20px 5px 20px;
+  padding: 25px 20px 5px 20px;
 }
 .content-box:after {
   content: "";
@@ -714,8 +714,6 @@ a:hover {
   line-height: 34px;
   width: 36px;
   text-align: center;
-  border: 1px solid #ddd;
-  border-radius: 4px;
 }
 
 .cd-panel {
@@ -1074,14 +1072,16 @@ a:hover {
 .secondary-post:last-child {
   margin-right: 0;
 }
-.secondary-post:nth-child(3n) {
-  margin-right: 0;
-}
-.secondary-post:nth-child(3n+1) {
-  clear: left;
-}
 .secondary-post a {
   height: 220px;
+}
+
+.front-page .secondary-post:nth-child(odd) {
+  margin-right: 0;
+}
+
+.back-page .secondary-post:nth-child(even) {
+  margin-right: 0;
 }
 
 .thumbnail-title {
@@ -1099,7 +1099,8 @@ a:hover .thumbnail-title {
   transition: background 250ms ease-in-out;
 }
 .thumbnail-title h2 {
-  padding: 10px 20px;
+  padding: 15px 20px;
+  line-height: 1.4;
   color: rgba(255, 255, 255, 0.8);
   display: block;
   text-decoration: none;
@@ -1119,6 +1120,19 @@ a:hover .thumbnail-title {
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.5);
   display: inline-block;
+}
+
+.loop-paging {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto;
+  clear: both;
+  text-align: center;
+}
+.loop-paging:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 /*  -----------------------------------------------------------------------------
@@ -1200,41 +1214,6 @@ header, hgroup, menu, nav, section, summary, time, mark, audio, video {
   -moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   -o-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-/*  -----------------------------------------------------------------------------
-  [03] THUMBS
-  ----------------------------------------------------------------------------- */
-/* Loop paging controls */
-.loop-paging .show-previous-page {
-  float: left;
-}
-
-.loop-paging .show-next-page {
-  float: right;
-}
-
-.loop-paging a {
-  background-color: #fff;
-  font-family: "Didact Gothic", Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
-  padding: 1px 12px 0;
-  line-height: 32px;
-  display: inline-block;
-  border: 1px solid #ccc;
-  color: #aaa;
-  font-weight: 400;
-  text-decoration: none;
-}
-
-.loop-paging a:hover {
-  color: #fff;
-  background-color: #222;
-}
-
-.loop-paging a:active {
-  position: relative;
-  top: 1px;
 }
 
 /*  -----------------------------------------------------------------------------

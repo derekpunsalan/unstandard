@@ -1,0 +1,6 @@
+// Page through posts on index
+.loop-paging {
+  @include outer-container();
+  clear: both;
+  text-align: center;
+}

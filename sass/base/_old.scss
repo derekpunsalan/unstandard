@@ -73,39 +73,6 @@ header, hgroup, menu, nav, section, summary, time, mark, audio, video {
 }
 
 /*  -----------------------------------------------------------------------------
-  [03] THUMBS
-  ----------------------------------------------------------------------------- */
-
-/* Loop paging controls */
-.loop-paging .show-previous-page {
-  float: left;
-}
-.loop-paging .show-next-page {
-  float: right;
-}
-.loop-paging a {
-  background-color: #fff;
-  font-family: "Didact Gothic", Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
-  padding: 1px 12px 0;
-  line-height: 32px;
-  display: inline-block;
-  border: 1px solid #ccc;
-  color: #aaa;
-  font-weight: 400;
-  text-decoration: none;
-}
-.loop-paging a:hover {
-  color: #fff;
-  background-color: #222;
-}
-.loop-paging a:active {
-  position: relative;
-  top: 1px;
-}
-.sticky {}
-
-/*  -----------------------------------------------------------------------------
   [04] SINGLES
   ----------------------------------------------------------------------------- */
 .single-entry h2 {

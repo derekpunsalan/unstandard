@@ -26,7 +26,7 @@ Tags: two-columns, right-sidebar, custom-header, custom-menu, full-width-templat
 @import "base/typography";
 
 // Layout
-@import "layout/wrappers";
+@import "layout/layout";
 @import "layout/grid";
 
 // Components
@@ -34,6 +34,7 @@ Tags: two-columns, right-sidebar, custom-header, custom-menu, full-width-templat
 @import "components/menu";
 @import "components/widgets";
 @import "components/post_thumbs";
+@import "components/pagination";
 
 
 
